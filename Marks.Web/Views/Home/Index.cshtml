@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+@section scripts{
+    <script src="Views/Home/Index.js"></script>
+}
+
+<button class="btn btn-success" id="createRecord" >Create new</button>
+
+<div id="modDialog" class="modal fade" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Create people with mark</h4>
+                <button class="close" data-dismiss="modal" area-hidden="true">X</button>
+            </div>
+            <div class="modal-body">
+                <form id="peopleForm">
+                    <div class="form-group">
+                        <label class="control-label">Full Name</label>
+                        <input id="fullNameInput" type="text" class="form-control" pattern="^[a-zA-Z]+ [a-zA-Z]+$" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Mark</label>
+                        <input id="markInput" type="number" class="form-control" min="0" max="5" />
+                    </div>
+                    <div id="errorMessage" class="alert alert-danger" style="display: none">
+
+                    </div>
+                    <div class="form-group">
+                        <button id="savePeople" type="submit" value="Create" class="btn btn-default">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="peopleTable">
+
+</div>
+
